@@ -199,7 +199,3 @@ $dbContext->users->delete(2);
 The `EntityLite` library provides a simple and effective way to manage database operations in PHP using an object-oriented approach. By following the examples provided in this documentation, you can easily implement your own entities and utilize the available methods for CRUD operations.
 
 For further information and advanced usage, feel free to explore the source code and adapt it to your needs.
-
----
-
-Feel free to modify or expand upon this documentation as needed! If you have any specific requirements or sections you'd like to add, just let me know!
