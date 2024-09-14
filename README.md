@@ -27,6 +27,10 @@ Make sure to include the `EntityLite` library in your project. If you are using 
 }
 ```
 
+```bash
+composer require joedevsharp/entitylite
+```
+
 ## Database Connection
 
 To connect to your database, you will use the `Database` class. It requires the database credentials to establish a connection.
