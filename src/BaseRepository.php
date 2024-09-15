@@ -22,6 +22,23 @@ abstract class BaseRepository {
         return $stmt->fetchAll(PDO::FETCH_CLASS, $this->entityClass);
     }
 
+    public function filter(callable $callback = null) {
+        $table = $this->tableName;
+        $query = 'SELECT * FROM ' . $table;
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        
+        // Obtener todos los resultados como objetos de la clase de entidad
+        $resultados = $stmt->fetchAll(PDO::FETCH_CLASS, $this->entityClass);
+        
+        // Si se proporciona un callback, filtrar los resultados
+        if ($callback) {
+            return array_filter($resultados, $callback);
+        }
+
+        return $resultados;
+    }
+
     public function findById($id) {
         $table = $this->tableName;
         $query = 'SELECT * FROM ' . $table . ' WHERE id = :id';
