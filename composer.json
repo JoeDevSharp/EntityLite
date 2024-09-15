@@ -2,7 +2,7 @@
     "name": "joedevsharp/entitylite",
     "description": "A lightweight PHP ORM inspired by Entity Framework, designed to simplify database interactions and provide an intuitive way to manage entities and relationships. This library utilizes a fluent interface and follows the PSR-4 autoloading standard, making it easy to integrate into any PHP project. With support for basic CRUD operations and a focus on simplicity and performance, this ORM empowers developers to work with databases seamlessly while maintaining clean and maintainable code.",
     "type": "library",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "require": {
         "php": ">=7.4"
     },
