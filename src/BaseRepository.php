@@ -73,7 +73,7 @@ abstract class BaseRepository {
         foreach ($entity->toArray() as $key => $value) {
             $stmt->bindValue(':' . $key, $value);
         }
-        $stmt->bindValue(':'.$idFieldName, $id);
+        $stmt->bindValue(':id', $id);
         return $stmt->execute();
     }
 
