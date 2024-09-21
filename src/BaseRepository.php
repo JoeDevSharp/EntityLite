@@ -60,7 +60,7 @@ abstract class BaseRepository {
         return $stmt->execute();
     }
 
-    public function update($id, $entity) {
+    public function update($id, $entity, $idFieldName = "id") {
         $table = $this->tableName;
         $fields = '';
         foreach ($entity->toArray() as $key => $value) {
@@ -68,12 +68,12 @@ abstract class BaseRepository {
         }
         $fields = rtrim($fields, ', ');
 
-        $query = 'UPDATE ' . $table . ' SET ' . $fields . ' WHERE id = :id';
+        $query = 'UPDATE ' . $table . ' SET ' . $fields . ' WHERE '.$idFieldName.' = :id';
         $stmt = $this->db->prepare($query);
         foreach ($entity->toArray() as $key => $value) {
             $stmt->bindValue(':' . $key, $value);
         }
-        $stmt->bindValue(':id', $id);
+        $stmt->bindValue(':'.$idFieldName, $id);
         return $stmt->execute();
     }
 
