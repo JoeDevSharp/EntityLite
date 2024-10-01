@@ -114,8 +114,8 @@ abstract class BaseRepository {
     private function getPrimaryKey()
     {
         // Crear una instancia de ReflectionClass para inspeccionar la entidad
-        $reflection = new ReflectionClass($this->entityClass);
-
+        $reflection = new \ReflectionClass($this->entityClass);
+        
         // Recorrer todas las propiedades de la clase
         foreach ($reflection->getProperties() as $property) {
 
