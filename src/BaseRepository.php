@@ -53,7 +53,7 @@ abstract class BaseRepository {
         $stmt->bindParam(':id', $id);
         $stmt->execute();
 
-        return $stmt->fetchObject(get_class($this->entityClass));
+        return $stmt->fetchObject($this->entityClass);
     }
 
 
